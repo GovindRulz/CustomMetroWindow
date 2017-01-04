@@ -33,13 +33,11 @@ namespace CustomMetroWindow
         public SaveData Save = new SaveData();
         public string LstName = "";
         protected string UserAccessLevel = "FULLRIGHTS";
-        public HorizonMetroWindow()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(HorizonMetroWindow<T>),
-                       new FrameworkPropertyMetadata(typeof(HorizonMetroWindow<T>)));
-        }
+
+
         public override void OnApplyTemplate()
         {
+            base.OnApplyTemplate();
             DisplayGrid = (HDataGrid)FindName("DisplayGrid");
             SearchDataGrid = (HDataGrid)FindName("SearchDataGrid");
             txtSearch = (HTextBox)FindName("txtSearch");
@@ -47,6 +45,7 @@ namespace CustomMetroWindow
             cmdSave = (Button)FindName("cmdSave");
             AddData = (TabItem)FindName("AddData");
         }
+
         public void KeyPressHandler(object sender, KeyEventArgs e)
         {
             try
